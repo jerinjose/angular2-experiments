@@ -1,8 +1,8 @@
 "use strict";
-var Todo = (function () {
-    function Todo() {
+var TodoObj = (function () {
+    function TodoObj() {
     }
-    return Todo;
+    return TodoObj;
 }());
-exports.Todo = Todo;
+exports.TodoObj = TodoObj;
 //# sourceMappingURL=todo.js.map

@@ -13,7 +13,6 @@ var core_1 = require('@angular/core');
 // Component
 var TodoComponent = (function () {
     function TodoComponent() {
-        this.todo = '';
         this.todoList = [];
         this.count = 1;
         this.text = '';

@@ -1,5 +1,5 @@
 // Include
-import { Component,Input,For } from '@angular/core';
+import { Component,Input} from '@angular/core';
 import { TodoObj } from './todo';
 
 // Component
@@ -47,12 +47,10 @@ import { TodoObj } from './todo';
 // Export
 export class TodoComponent {
   public count : number;
-  todo : TodoObj;
-  todoList : array;
-  text : string;
+  public todoList : TodoObj[];
+  public text : string;
 
   constructor() {
-     this.todo = '';
      this.todoList = [];
      this.count = 1;
      this.text = '';
@@ -73,3 +71,4 @@ export class TodoComponent {
       }
       this.todoList = tempArray;
   }
+}

@@ -1,5 +1,5 @@
-export class Todo {
-  id : number
-  name : string;
+export class TodoObj {
+  id: number;
+  name: string;
   done: boolean;
 }
