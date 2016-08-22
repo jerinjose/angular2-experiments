@@ -32,3 +32,21 @@ body {
     width: 35% !important;
     margin:0 auto;
 }
+
+.form{
+  width: 50% !important;
+  margin-top: 100px;
+}
+
+.add-btn {
+  width: 150px;
+}
+
+.btn-row {
+  text-align: center;
+  padding-top: 20px;
+}
+
+.error-msg{
+  color: red;
+}
