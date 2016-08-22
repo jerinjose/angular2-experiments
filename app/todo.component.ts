@@ -4,7 +4,7 @@ import { TodoObj } from './todo';
 
 // Component
 @Component({
-    selector: 'my-app',
+    selector: 'my-todo',
     template: `<div class="container">
                     <div class="container">
                         <div class="row todo-form">

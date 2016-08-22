@@ -9,24 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var forms_1 = require('@angular/forms');
-var platform_browser_1 = require('@angular/platform-browser');
-var app_component_1 = require('./app.component');
-var app_routing_1 = require('./app.routing');
-var todo_component_1 = require('./todo.component');
-var form_component_1 = require('./form.component');
-var AppModule = (function () {
-    function AppModule() {
+var FormComponent = (function () {
+    function FormComponent() {
     }
-    AppModule = __decorate([
-        core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, app_routing_1.routing],
-            declarations: [app_component_1.AppComponent, todo_component_1.TodoComponent, form_component_1.FormComponent],
-            bootstrap: [app_component_1.AppComponent]
+    FormComponent = __decorate([
+        core_1.Component({
+            selector: 'my-form',
+            template: '<h1>Form</h1>'
         }), 
         __metadata('design:paramtypes', [])
-    ], AppModule);
-    return AppModule;
+    ], FormComponent);
+    return FormComponent;
 }());
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+exports.FormComponent = FormComponent;
+//# sourceMappingURL=form.component.js.map
