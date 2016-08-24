@@ -11,14 +11,14 @@ import { EqualValidator } from './equal-validator.directive';
                       <div class="form-group">
                         <label>First name</label>
                         <input type="text" class="form-control" [(ngModel)]="user.firstName" #firstname="ngModel" name="firstname" minlength="4" placeholder="Enter first name" required/>
-                        <small [hidden]="firstname.valid || (firstname.pristine && !submitted)" class="text-danger">Firstname is required (minimum 4 characters).</small>
+                        <small *ngIf = "(!firstname.valid && submitted)" class="text-danger">Firstname is required (minimum 4 characters).</small>
                       </div>
                     </div>
                     <div class="col-sm-6">
                       <div class="form-group">
                         <label>First name</label>
                         <input type="text" class="form-control" [(ngModel)]="user.lastName" #lastname="ngModel" name="lastname" minlength="4" placeholder="Enter first name" required/>
-                        <small [hidden]="lastname.valid || (lastname.pristine && !submitted)" class="text-danger">Lastname is required (minimum 4 characters).</small>
+                        <small *ngIf = "(!lastname.valid && submitted)" class="text-danger">Lastname is required (minimum 4 characters).</small>
                       </div>
                     </div>
                   </div>
@@ -28,7 +28,7 @@ import { EqualValidator } from './equal-validator.directive';
                       <div class="form-group">
                         <label>Email</label>
                         <input type="text" class="form-control" [(ngModel)]="user.email" #emailfield="ngModel" name="emailfield"  pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$" placeholder="Enter email" required/>
-                        <small [hidden]="emailfield.valid || (emailfield.pristine && !submitted)" class="text-danger">Email is required and format should be <i>john@doe.com</i>.</small>
+                        <small *ngIf = "(!emailfield.valid && submitted)" class="text-danger">Email is required and format should be <i>john@doe.com</i>.</small>
                       </div>
                     </div>
 
@@ -36,7 +36,7 @@ import { EqualValidator } from './equal-validator.directive';
                       <div class="form-group">
                         <label>Mobile</label>
                         <input type="text" class="form-control" [(ngModel)]="user.mobile" #mobileField="ngModel" name="mobileField" pattern="[0-9]{10}" placeholder="Enter mobile number" required/>
-                        <small [hidden]="mobileField.valid || (mobileField.pristine && !submitted)" class="text-danger">Mobile is required and format should be <i>9876543210</i>.</small>
+                        <small *ngIf = "(!mobileField.valid && submitted)" class="text-danger">Mobile is required and format should be <i>9876543210</i>.</small>
                       </div>
                     </div>
                   </div>
@@ -47,7 +47,7 @@ import { EqualValidator } from './equal-validator.directive';
                       <div class="form-group">
                         <label>Password</label>
                         <input type="password" class="form-control" [(ngModel)]="user.password" #passwordfield="ngModel" validateEqual="confirmPasswordField" reverse="true" name="passwordfield"  placeholder="Enter password" required/>
-                        <small [hidden]="passwordfield.valid || (passwordfield.pristine && !submitted)" class="text-danger">Password is required.</small>
+                        <small *ngIf = "(!passwordfield.valid && submitted)" class="text-danger">Password is required.</small>
                       </div>
                     </div>
 
@@ -55,7 +55,7 @@ import { EqualValidator } from './equal-validator.directive';
                       <div class="form-group">
                         <label>Confirm Password</label>
                         <input type="password" class="form-control" [(ngModel)]="user.confirmPassword" #confirmPasswordField="ngModel"  validateEqual="passwordfield" reverse="false" name="confirmPasswordField" placeholder="Enter confirm password" required/>
-                        <small [hidden]="confirmPasswordField.valid || (confirmPasswordField.pristine && !submitted)" class="text-danger">Password mismatch.</small>
+                        <small *ngIf="(!confirmPasswordField.valid && submitted)" class="text-danger">Password mismatch.</small>
                       </div>
                     </div>
                   </div>
@@ -70,6 +70,7 @@ import { EqualValidator } from './equal-validator.directive';
 })
 
 export class FormComponent implements OnInit {
+    public submitted: boolean;
     public user: {
         firstName: string;
         lastName: string;
@@ -78,7 +79,7 @@ export class FormComponent implements OnInit {
         password : string;
         confirmPassword : string;
     };
-    public submitted: boolean;
+
 
     ngOnInit() {
        this.user = {
@@ -92,7 +93,7 @@ export class FormComponent implements OnInit {
        this.submitted = false;
    }
 
-   addUser(model: User, isValid: boolean){
+   addUser(model,isValid){
       this.submitted = true;
       if(isValid){
           this.user = {
