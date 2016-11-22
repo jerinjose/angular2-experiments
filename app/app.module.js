@@ -12,18 +12,27 @@ var core_1 = require('@angular/core');
 var forms_1 = require('@angular/forms');
 var platform_browser_1 = require('@angular/platform-browser');
 var forms_2 = require("@angular/forms");
+var angular2_recaptcha_1 = require('angular2-recaptcha');
+var core_2 = require('angular2-google-maps/core');
+var http_1 = require('@angular/http');
 var app_component_1 = require('./app.component');
 var app_routing_1 = require('./app.routing');
 var todo_component_1 = require('./todo.component');
 var form_component_1 = require('./form.component');
+var restaurant_component_1 = require('./restaurant.component');
+var Reataurant_service_1 = require('./Reataurant.service');
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, forms_2.ReactiveFormsModule, app_routing_1.routing],
-            declarations: [app_component_1.AppComponent, todo_component_1.TodoComponent, form_component_1.FormComponent],
-            bootstrap: [app_component_1.AppComponent]
+            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, forms_2.ReactiveFormsModule, app_routing_1.routing, angular2_recaptcha_1.ReCaptchaModule, http_1.HttpModule, core_2.AgmCoreModule.forRoot({
+                    apiKey: 'AIzaSyBfD7c8b8zhbXezPwXrFSaWB7Q8P7LOSw4',
+                    libraries: ["places"]
+                })],
+            declarations: [app_component_1.AppComponent, todo_component_1.TodoComponent, form_component_1.FormComponent, restaurant_component_1.RestaurantComponent],
+            bootstrap: [app_component_1.AppComponent],
+            providers: [Reataurant_service_1.RestaurantService]
         }), 
         __metadata('design:paramtypes', [])
     ], AppModule);

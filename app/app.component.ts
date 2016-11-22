@@ -10,6 +10,7 @@ import { Component } from '@angular/core';
                 <ul class="nav navbar-nav">
                   <li [routerLinkActive]="['active']"><a routerLink="/todos">Todo</a></li>
                   <li [routerLinkActive]="['active']"><a routerLink="/form">Form</a></li>
+                  <li [routerLinkActive]="['active']"><a routerLink="/restaurants">Restaurants</a></li>
                 </ul>
               </div>
             </nav>

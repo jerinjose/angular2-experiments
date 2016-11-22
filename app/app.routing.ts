@@ -2,6 +2,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { TodoComponent }      from './todo.component';
 import { FormComponent }      from './form.component';
+import { RestaurantComponent }      from './restaurant.component';
 
 const appRoutes: Routes = [
   {
@@ -11,6 +12,10 @@ const appRoutes: Routes = [
   {
     path: 'form',
     component: FormComponent
+  },
+  {
+    path: 'restaurants',
+    component: RestaurantComponent
   },
   {
     path: '',

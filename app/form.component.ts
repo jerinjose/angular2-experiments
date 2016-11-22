@@ -59,6 +59,9 @@ import { EqualValidator } from './equal-validator.directive';
                       </div>
                     </div>
                   </div>
+                  <div class="row">
+                    <re-captcha (captchaResponse)="handleCorrectCaptcha($event)" site_key="6LfxMwwUAAAAAB20RysosF6YpGzLvzMYldeFsdvm"></re-captcha>
+                  </div>
                   <div class="row btn-row">
                       <div class="col-sm-12">
                           <button type="button" class="btn btn-primary btn-md add-btn" (click)="addUser(form.value, form.valid)">Add User</button>
@@ -107,6 +110,9 @@ export class FormComponent implements OnInit {
           this.submitted = false;
           alert("Successfully added the user details...");
       }
+   }
 
+   handleCorrectCaptcha(e){
+      console.log(e);
    }
 }

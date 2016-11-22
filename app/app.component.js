@@ -15,7 +15,7 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "<nav class=\"navbar navbar-default\">\n              <div class=\"container-fluid\">\n                <div class=\"navbar-header\">\n                  <a class=\"navbar-brand\" routerLink=\"/todos\">Angular2</a>\n                </div>\n                <ul class=\"nav navbar-nav\">\n                  <li [routerLinkActive]=\"['active']\"><a routerLink=\"/todos\">Todo</a></li>\n                  <li [routerLinkActive]=\"['active']\"><a routerLink=\"/form\">Form</a></li>\n                </ul>\n              </div>\n            </nav>\n            <router-outlet></router-outlet>"
+            template: "<nav class=\"navbar navbar-default\">\n              <div class=\"container-fluid\">\n                <div class=\"navbar-header\">\n                  <a class=\"navbar-brand\" routerLink=\"/todos\">Angular2</a>\n                </div>\n                <ul class=\"nav navbar-nav\">\n                  <li [routerLinkActive]=\"['active']\"><a routerLink=\"/todos\">Todo</a></li>\n                  <li [routerLinkActive]=\"['active']\"><a routerLink=\"/form\">Form</a></li>\n                  <li [routerLinkActive]=\"['active']\"><a routerLink=\"/restaurants\">Restaurants</a></li>\n                </ul>\n              </div>\n            </nav>\n            <router-outlet></router-outlet>"
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
